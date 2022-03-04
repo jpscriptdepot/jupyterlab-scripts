@@ -16,7 +16,5 @@ RUN apt-get install git -y
 RUN adduser jupyterlab --disabled-password --gecos ""
 RUN echo "PATH=$PATH:/home/jupyterlab/.local/bin" >> /home/jupyterlab/.bashrc
 
-
-RUN cd /home/jupyterlab
-RUN git clone https://www.github.com/jpscriptdepot/jupyterlab-scripts.git
-RUN chown -R jupyterlab:jupyterlab jupyterlab-scripts
+RUN git clone https://www.github.com/jpscriptdepot/jupyterlab-scripts.git /home/jupyterlab/
+RUN chown -R jupyterlab:jupyterlab /home/jupyterlab/jupyterlab-scripts

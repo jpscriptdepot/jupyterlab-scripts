@@ -4,7 +4,7 @@ pip3 install --upgrade pip
 pip3 install jupyterlab
 
 jupyter-lab --generate-config
-sed -i -e '1ic.ServerApp.root_dir = "/home/jupyterlab/"\' /home/jupyterlab/.jupyter/jupyter_lab_config.py
+sed -i -e '1ic.ServerApp.root_dir = "/jupyterlab/"\' /home/jupyterlab/.jupyter/jupyter_lab_config.py
 sed -i -e '1ic.ServerApp.ip = "*"\' /home/jupyterlab/.jupyter/jupyter_lab_config.py
 sed -i -e '1ic.ExtensionApp.open_browser = False\' /home/jupyterlab/.jupyter/jupyter_lab_config.py
 sed -i -e '1ic.ServerApp.port = 8001\' /home/jupyterlab/.jupyter/jupyter_lab_config.py

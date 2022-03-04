@@ -14,20 +14,9 @@ RUN apt-get install -f -y
 RUN apt-get install git -y
 
 RUN adduser jupyterlab --disabled-password --gecos ""
-RUN echo "PATH=$PATH:/home/jupyter/.local/bin" >> /home/jupyter/.bashrc
+RUN echo "PATH=$PATH:/home/jupyterlab/.local/bin" >> /home/jupyterlab/.bashrc
 
+
+RUN cd /home/jupyterlab
 RUN git clone https://www.github.com/jpscriptdepot/jupyterlab-scripts.git
-
-# pip3 install --upgrade pip
-# pip3 install jupyterlab
-
-# /home/jupyter/.local/bin/jupyter-lab --generate-config
-# sed -i -e '1ic.ServerApp.root_dir = "/home/jupyter/"\' /home/jupyter/.jupyter/jupyter_lab_config.py
-# sed -i -e '1ic.ServerApp.ip = "*"\' /home/jupyter/.jupyter/jupyter_lab_config.py
-# sed -i -e '1ic.ExtensionApp.open_browser = False\' /home/jupyter/.jupyter/jupyter_lab_config.py
-# sed -i -e '1ic.ServerApp.port = 8001\' /home/jupyter/.jupyter/jupyter_lab_config.py
-# sed -i -e '1ic.ServerApp.base_url = '/jupyterlab'\' /home/jupyter/.jupyter/jupyter_lab_config.py
-
-# jupyter-lab password
-# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout jupyter.key -out jupyter.pem
-# jupyter-lab --certfile=jupyter.pem --keyfile=jupyter.key
+RUN chown -R jupyterlab:jupyterlab jupyterlab-scripts

@@ -13,7 +13,7 @@ RUN apt-get install nano -y
 RUN apt-get install -f -y
 RUN apt-get install git -y
 
-RUN useradd -m jupyter
+RUN adduser jupyterlab --disabled-password --gecos ""
 RUN echo "PATH=$PATH:/home/jupyter/.local/bin" >> /home/jupyter/.bashrc
 
 RUN git clone https://www.github.com/jpscriptdepot/jupyterlab-scripts.git

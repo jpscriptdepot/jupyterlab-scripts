@@ -16,7 +16,7 @@ RUN apt-get install git -y
 RUN useradd -m jupyter
 RUN echo "PATH=$PATH:/home/jupyter/.local/bin" >> /home/jupyter/.bashrc
 
-git clone https://www.github.com/jpscriptdepot/jupyter-scripts.git
+RUN git clone https://www.github.com/jpscriptdepot/jupyterlab-scripts.git
 
 # pip3 install --upgrade pip
 # pip3 install jupyterlab
